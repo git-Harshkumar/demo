@@ -1,4 +1,4 @@
-import { Github, FileText, ExternalLink, Calendar, Users, Bookmark, FileDown, TrendingUp } from "lucide-react";
+import { Github, FileText, ExternalLink, Calendar, Bookmark, FileDown, TrendingUp } from "lucide-react";
 import { paperMeta, authors } from "@/data/paperData";
 
 export function PaperHeader() {
@@ -94,7 +94,7 @@ export function PaperHeader() {
           {/* Authors List inline */}
           <div className="flex flex-wrap items-center gap-4 pt-3 border-t border-stone-100">
             <div className="flex items-center gap-3">
-              {visibleAuthors.map((author, index) => (
+              {visibleAuthors.map((author) => (
                 <div key={author.name} className="flex items-center gap-2">
                   <img
                     src={author.img}
