@@ -99,5 +99,35 @@ export const paperMeta = {
   githubUrl: "https://github.com/zai-org/glm-5.1",
   arxivUrl: "https://arxiv.org/abs/2504.XXXXXX",
   pdfUrl: "https://arxiv.org/pdf/2504.XXXXXX.pdf",
-  abstractShort: "GLM-5.1 is Z.ai's next-generation flagship model for agentic engineering and long-horizon tasks. The release reports stronger coding and agentic performance than GLM-5, including results on SWE-Bench Pro, NL2Repo, Terminal-Bench 2.0, BrowseComp, HLE, GPQA Diamond, and MCP-Atlas.",
 };
+
+export interface CodeImplementation {
+  repo: string;
+  stars: string;
+  framework: "PyTorch" | "TensorFlow" | "ONNX";
+  isOfficial: boolean;
+  url: string;
+}
+
+export const codeImplementations: CodeImplementation[] = [
+  { repo: "zai-org/glm-5.1", stars: "5.7k", framework: "PyTorch", isOfficial: true, url: "https://github.com/zai-org/glm-5.1" },
+  { repo: "huggingface/transformers-glm", stars: "1.2k", framework: "PyTorch", isOfficial: false, url: "https://github.com/huggingface/transformers" },
+  { repo: "keras-team/keras-glm5", stars: "430", framework: "TensorFlow", isOfficial: false, url: "https://github.com/keras-team/keras" },
+  { repo: "onnx/models/glm-5.1", stars: "210", framework: "ONNX", isOfficial: false, url: "https://github.com/onnx/models" }
+];
+
+export interface DatasetItem {
+  name: string;
+  url: string;
+  description: string;
+  papersCount: number;
+}
+
+export const datasetsList: DatasetItem[] = [
+  { name: "SWE-Bench Pro", url: "https://paperswithcode.com/dataset/swe-bench", description: "Evaluating LLMs on resolving real-world GitHub issues in complex repositories.", papersCount: 412 },
+  { name: "GPQA Diamond", url: "https://paperswithcode.com/dataset/gpqa", description: "A Google-Proof Q&A benchmark for testing advanced graduate-level reasoning.", papersCount: 189 },
+  { name: "Humanity's Last Exam (HLE)", url: "https://paperswithcode.com/dataset/hle", description: "Hard questions spanning advanced mathematics, physics, and computer science.", papersCount: 95 },
+  { name: "Terminal-Bench 2.0", url: "#", description: "Evaluating command line generation, tool calls, and execution verification.", papersCount: 64 },
+  { name: "BrowseComp", url: "#", description: "Evaluating browser-agent control, form completion, and navigation success rates.", papersCount: 38 },
+  { name: "MCP-Atlas", url: "#", description: "Multi-Context Protocol test suite evaluating model tools call orchestration.", papersCount: 22 }
+];
