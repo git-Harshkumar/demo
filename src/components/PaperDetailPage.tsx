@@ -22,13 +22,13 @@ export function PaperDetailPage() {
       {/* Top sticky Navbar */}
       <Navbar />
 
-      {/* Main page content container */}
-      <main className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-16 flex-1 flex flex-col">
+      {/* Main page content container - Expanded to max-w-7xl */}
+      <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-16 flex-1 flex flex-col">
         {/* Breadcrumb section */}
         <Breadcrumb />
 
         {/* Tab Navigation / Anchor strip */}
-        <div className="border-b border-neutral-200 mb-6 sticky top-16 bg-white z-40">
+        <div className="border-b border-neutral-200 mb-8 sticky top-16 bg-white z-40">
           <nav className="flex space-x-8" aria-label="Tabs">
             {(["overview", "code", "results", "datasets"] as Tab[]).map((tab) => (
               <button
@@ -49,17 +49,17 @@ export function PaperDetailPage() {
         {/* Conditional Tab Rendering */}
         <div className="flex-1">
           {activeTab === "overview" && (
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
-              {/* Left Sidebar */}
-              <aside className="lg:col-span-1 space-y-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+              {/* Left Sidebar - Expanded width (33.3%) */}
+              <aside className="lg:col-span-1 space-y-6">
                 {/* Task Category Card */}
-                <div className="bg-[#F5F5F5]/65 rounded-xl border border-neutral-200 p-4 space-y-3 shadow-sm">
+                <div className="bg-[#F5F5F5]/65 rounded-xl border border-neutral-200 p-5 md:p-6 space-y-3.5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                   <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-neutral-400">Task Category</h4>
                   <div className="flex flex-wrap gap-1.5">
                     {taskTags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-0.5 border border-black bg-white rounded text-[10px] font-bold text-black"
+                        className="px-2.5 py-1 border border-black bg-white rounded text-[10px] font-bold text-black"
                       >
                         {tag}
                       </span>
@@ -68,9 +68,9 @@ export function PaperDetailPage() {
                 </div>
 
                 {/* Datasets Used Card */}
-                <div className="bg-[#F5F5F5]/65 rounded-xl border border-neutral-200 p-4 space-y-3 shadow-sm">
+                <div className="bg-[#F5F5F5]/65 rounded-xl border border-neutral-200 p-5 md:p-6 space-y-3.5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                   <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-neutral-400">Datasets Used</h4>
-                  <div className="flex flex-col gap-1.5">
+                  <div className="flex flex-col gap-2">
                     {benchmarks.slice(0, 4).map((b) => (
                       <button
                         key={b.name}
@@ -84,24 +84,24 @@ export function PaperDetailPage() {
                 </div>
 
                 {/* Results Chart Thumbnail */}
-                <div className="bg-[#F5F5F5]/65 rounded-xl border border-neutral-200 p-4 space-y-3 shadow-sm">
+                <div className="bg-[#F5F5F5]/65 rounded-xl border border-neutral-200 p-5 md:p-6 space-y-3.5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                   <h4 className="text-[10px] font-extrabold uppercase tracking-widest text-neutral-400">Performance</h4>
-                  <div className="border border-neutral-200 bg-white rounded-lg p-2.5 flex flex-col items-center shadow-inner">
-                    <div className="w-full flex items-end justify-center gap-1.5 h-12 pb-1 border-b border-neutral-100">
-                      <div className="w-2.5 bg-[#F04D22] rounded-t-sm" style={{ height: "65%" }}></div>
-                      <div className="w-2.5 bg-black rounded-t-sm" style={{ height: "95%" }}></div>
-                      <div className="w-2.5 bg-neutral-300 rounded-t-sm" style={{ height: "45%" }}></div>
-                      <div className="w-2.5 bg-neutral-300 rounded-t-sm" style={{ height: "35%" }}></div>
+                  <div className="border border-neutral-200 bg-white rounded-lg p-3.5 flex flex-col items-center shadow-inner">
+                    <div className="w-full flex items-end justify-center gap-1.5 h-16 pb-1 border-b border-neutral-100">
+                      <div className="w-3 bg-[#F04D22] rounded-t-sm" style={{ height: "65%" }}></div>
+                      <div className="w-3 bg-black rounded-t-sm" style={{ height: "95%" }}></div>
+                      <div className="w-3 bg-neutral-300 rounded-t-sm" style={{ height: "45%" }}></div>
+                      <div className="w-3 bg-neutral-300 rounded-t-sm" style={{ height: "35%" }}></div>
                     </div>
-                    <span className="text-[8px] font-extrabold text-neutral-400 mt-1.5 uppercase tracking-wider">
+                    <span className="text-[8px] font-extrabold text-neutral-400 mt-2 uppercase tracking-wider">
                       Click Results tab
                     </span>
                   </div>
                 </div>
               </aside>
 
-              {/* Main Content Column */}
-              <div className="lg:col-span-3 space-y-5">
+              {/* Main Content Column - 66.7% width */}
+              <div className="lg:col-span-2 space-y-8">
                 <PaperHeader />
                 <AISummaryCard />
                 <Abstract />
@@ -113,21 +113,21 @@ export function PaperDetailPage() {
           )}
 
           {activeTab === "code" && (
-            <div className="space-y-6">
+            <div className="space-y-8">
               <CodeSection />
               <RelatedPapers />
             </div>
           )}
 
           {activeTab === "results" && (
-            <div className="space-y-6">
+            <div className="space-y-8">
               <Benchmarks />
               <RelatedPapers />
             </div>
           )}
 
           {activeTab === "datasets" && (
-            <div className="space-y-6">
+            <div className="space-y-8">
               <DatasetsSection />
               <RelatedPapers />
             </div>
@@ -137,7 +137,7 @@ export function PaperDetailPage() {
 
       {/* Clean footer */}
       <footer className="bg-[#F5F5F5] border-t border-neutral-200 py-8">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-bold text-neutral-400 uppercase tracking-wide">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-bold text-neutral-400 uppercase tracking-wide">
           <p>© 2026 Frontier Atlas. All rights reserved.</p>
           <p>Data sourced from arXiv and Papers with Code. Last updated 2026.</p>
         </div>

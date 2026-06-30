@@ -61,7 +61,7 @@ export function RelatedPapers() {
           {relatedPapers.slice(0, 5).map((paper) => (
             <article
               key={paper.title}
-              className="flex-shrink-0 w-[220px] bg-white border border-neutral-200 rounded-xl p-4 flex flex-col justify-between h-[145px] hover:border-[#F04D22] hover:shadow-sm transition-all snap-start cursor-pointer group/card"
+              className="flex-shrink-0 w-[250px] bg-white border border-neutral-200 rounded-xl p-5 flex flex-col justify-between h-[160px] hover:border-[#F04D22] hover:-translate-y-1 hover:shadow-md transition-all duration-300 snap-start cursor-pointer group/card"
             >
               <div className="space-y-1">
                 <h4 className="text-xs font-bold text-black leading-snug line-clamp-3 group-hover/card:text-[#F04D22] transition-colors">
@@ -134,7 +134,7 @@ export function RelatedPapers() {
                   {filteredPapers.map((paper) => (
                     <article
                       key={paper.title}
-                      className="bg-white border border-neutral-200 rounded-xl p-4 flex flex-col justify-between h-[135px] hover:border-[#F04D22] hover:shadow-sm transition-all cursor-pointer group/item"
+                      className="bg-white border border-neutral-200 rounded-xl p-5 flex flex-col justify-between h-[155px] hover:border-[#F04D22] hover:-translate-y-1 hover:shadow-md transition-all duration-300 cursor-pointer group/item"
                     >
                       <div>
                         <h4 className="text-xs font-bold text-black leading-snug line-clamp-3 group-hover/item:text-[#F04D22] transition-colors">

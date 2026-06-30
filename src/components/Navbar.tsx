@@ -3,7 +3,7 @@ import { Search, Bookmark } from "lucide-react";
 export function Navbar() {
   return (
     <nav className="border-b border-neutral-200 bg-white sticky top-0 z-50 shadow-sm">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
           <div className="flex items-center gap-2 flex-shrink-0 cursor-pointer">
