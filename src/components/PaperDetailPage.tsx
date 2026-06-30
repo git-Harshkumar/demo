@@ -10,7 +10,7 @@ import { RelatedPapers } from "./RelatedPapers";
 
 export function PaperDetailPage() {
   return (
-    <div className="min-h-screen bg-stone-50 flex flex-col font-sans">
+    <div className="min-h-screen bg-[#FAFAFA] flex flex-col font-sans text-black selection:bg-[#F04D22]/10 selection:text-[#F04D22]">
       {/* Top sticky Navbar */}
       <Navbar />
 
@@ -19,8 +19,8 @@ export function PaperDetailPage() {
         {/* Breadcrumb section */}
         <Breadcrumb />
 
-        {/* Vertical stack of cards matching the layout */}
-        <div className="space-y-5 flex-1">
+        {/* Vertical stack of cards matching the screenshot layout exactly */}
+        <div className="space-y-6 flex-1">
           <PaperHeader />
           <CitationCard />
           <AISummaryCard />
@@ -32,8 +32,8 @@ export function PaperDetailPage() {
       </main>
 
       {/* Clean footer */}
-      <footer className="bg-white border-t border-stone-200/80 py-8">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold text-stone-500">
+      <footer className="bg-white border-t border-neutral-200/85 py-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-bold text-neutral-400 uppercase tracking-wide">
           <p>© 2026 Frontier Atlas. All rights reserved.</p>
           <p>Data sourced from arXiv and Papers with Code. Last updated 2026.</p>
         </div>
