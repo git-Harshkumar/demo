@@ -6,15 +6,15 @@ export function Abstract() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section className="bg-white rounded-xl border border-neutral-200 p-5 shadow-sm transition-all hover:shadow-md">
-      <div className="flex items-center gap-2 mb-4">
+    <section className="bg-white rounded-xl border border-neutral-200 p-5 shadow-sm transition-all hover:shadow-md font-sans">
+      <div className="flex items-center gap-2 mb-4 select-none">
         <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#F5F5F5] border border-neutral-200 text-black">
           <FileText className="w-4 h-4" />
         </div>
-        <h3 className="text-sm font-bold text-black tracking-tight font-sans">Abstract</h3>
+        <h3 className="text-sm font-bold text-black tracking-[-0.02em]">Abstract</h3>
       </div>
 
-      <div className="text-sm text-neutral-800 leading-relaxed max-w-4xl font-normal font-sans">
+      <div className="text-sm text-neutral-800 leading-relaxed tracking-normal font-normal">
         <p>
           {abstractShort}
           {expanded && <span className="inline">{abstractRest}</span>}
@@ -26,7 +26,7 @@ export function Abstract() {
         {expanded ? (
           <button
             onClick={() => setExpanded(false)}
-            className="text-xs font-extrabold text-[#F04D22] hover:text-black inline-flex items-center gap-1 transition-all font-sans"
+            className="text-xs font-semibold text-[#F04D22] hover:text-black inline-flex items-center gap-1 transition-all"
           >
             Show less
             <ChevronUp className="w-3.5 h-3.5" />
@@ -34,7 +34,7 @@ export function Abstract() {
         ) : (
           <button
             onClick={() => setExpanded(true)}
-            className="text-xs font-extrabold text-[#F04D22] hover:text-black inline-flex items-center gap-1 transition-all font-sans"
+            className="text-xs font-semibold text-[#F04D22] hover:text-black inline-flex items-center gap-1 transition-all"
           >
             Read full abstract
             <ArrowRight className="w-3.5 h-3.5" />

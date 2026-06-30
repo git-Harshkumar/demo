@@ -3,14 +3,14 @@ import { aiSummary } from "@/data/paperData";
 
 export function AISummaryCard() {
   return (
-    <section className="relative overflow-hidden rounded-xl border border-neutral-200 bg-[#F5F5F5]/60 p-6 shadow-sm transition-all hover:shadow-md">
+    <section className="relative overflow-hidden rounded-xl border border-neutral-200 bg-[#F5F5F5]/60 p-6 shadow-sm transition-all hover:shadow-md font-sans">
       <div className="flex justify-between items-center gap-6">
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-3 select-none">
             <Sparkles className="w-5 h-5 text-[#F04D22]" />
-            <h3 className="text-sm font-bold text-black tracking-tight">AI-Generated Summary</h3>
+            <h3 className="text-sm font-bold text-black tracking-[-0.02em]">AI-Generated Summary</h3>
           </div>
-          <p className="text-sm text-neutral-800 leading-relaxed max-w-4xl font-normal">
+          <p className="text-sm text-neutral-800 leading-relaxed tracking-normal font-normal">
             {aiSummary}
           </p>
         </div>

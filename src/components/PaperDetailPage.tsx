@@ -32,10 +32,10 @@ export function PaperDetailPage() {
       </main>
 
       {/* Clean footer */}
-      <footer className="bg-white border-t border-neutral-200/85 py-8">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-bold text-neutral-400 uppercase tracking-wide">
-          <p>© 2026 Frontier Atlas. All rights reserved.</p>
-          <p>Data sourced from arXiv and Papers with Code. Last updated 2026.</p>
+      <footer className="bg-white border-t border-neutral-200/85 py-8 select-none font-sans">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold text-neutral-450 uppercase">
+          <p>© <span className="font-mono font-bold">2026</span> Frontier Atlas. All rights reserved.</p>
+          <p>Data sourced from arXiv and Papers with Code. Last updated <span className="font-mono font-bold">2026</span>.</p>
         </div>
       </footer>
     </div>

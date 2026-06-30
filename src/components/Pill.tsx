@@ -15,7 +15,7 @@ const variants = {
 
 export function Pill({ children, variant = "default", className = "" }: PillProps) {
   return (
-    <span className={`inline-flex items-center px-3 py-1 rounded text-xs font-bold border transition-colors ${variants[variant]} ${className}`}>
+    <span className={`inline-flex items-center px-2 py-0.5 rounded border text-[11px] font-semibold transition-colors ${variants[variant]} ${className}`}>
       {children}
     </span>
   );

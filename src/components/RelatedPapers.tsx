@@ -31,20 +31,20 @@ export function RelatedPapers() {
   );
 
   return (
-    <section className="bg-white rounded-xl border border-neutral-200 p-5 shadow-sm transition-all hover:shadow-md relative">
+    <section className="bg-white rounded-xl border border-neutral-200 p-5 shadow-sm transition-all hover:shadow-md relative font-sans">
       <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 select-none">
           <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#F5F5F5] border border-neutral-200 text-black">
             <Bookmark className="w-4.5 h-4.5" />
           </div>
-          <h3 className="text-sm font-bold text-black tracking-tight font-sans">Related Papers</h3>
+          <h3 className="text-sm font-bold text-black tracking-[-0.02em]">Related Papers</h3>
         </div>
         <button
           onClick={() => {
             setSearchQuery("");
             setIsModalOpen(true);
           }}
-          className="text-xs font-extrabold text-[#F04D22] hover:text-black inline-flex items-center gap-1 transition-all font-sans"
+          className="text-xs font-semibold text-[#F04D22] hover:text-black inline-flex items-center gap-1 transition-all"
         >
           View all
           <ArrowRight className="w-3.5 h-3.5" />
@@ -61,17 +61,19 @@ export function RelatedPapers() {
           {relatedPapers.slice(0, 5).map((paper) => (
             <article
               key={paper.title}
-              className="flex-shrink-0 w-[220px] bg-white border border-neutral-200 rounded-xl p-4 flex flex-col justify-between h-[145px] hover:border-[#F04D22] hover:shadow-sm transition-all snap-start cursor-pointer group/card font-sans"
+              className="flex-shrink-0 w-[220px] bg-white border border-neutral-200 rounded-xl p-4 flex flex-col justify-between h-[145px] hover:border-[#F04D22] hover:shadow-sm transition-all snap-start cursor-pointer group/card"
             >
               <div className="space-y-1">
-                <h4 className="text-xs font-bold text-black leading-snug line-clamp-3 group-hover/card:text-[#F04D22] transition-colors">
+                <h4 className="text-xs font-bold text-black leading-snug line-clamp-3 group-hover/card:text-[#F04D22] transition-colors tracking-[-0.01em]">
                   {paper.title}
                 </h4>
-                <p className="text-[10px] text-neutral-400 font-mono font-bold pt-1">{paper.arxiv}</p>
+                <p className="text-[9px] text-neutral-400 font-mono font-bold pt-1">{paper.arxiv}</p>
               </div>
 
               <div className="flex items-center justify-between border-t border-neutral-100 pt-2.5 mt-auto">
-                <span className="text-[10px] text-neutral-500 font-bold">{paper.citations} citations</span>
+                <span className="text-[10px] text-neutral-500 font-semibold">
+                  <span className="font-mono font-bold text-neutral-600">{paper.citations}</span> citations
+                </span>
                 <button
                   className="p-1 text-neutral-450 hover:text-[#F04D22] hover:bg-[#F5F5F5] rounded transition-all"
                   aria-label="Save paper"
@@ -96,11 +98,11 @@ export function RelatedPapers() {
       {/* View All Overlay Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-neutral-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-all">
-          <div className="bg-white rounded-2xl border border-neutral-200 shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150 font-sans">
+          <div className="bg-white rounded-2xl border border-neutral-200 shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
             {/* Modal Header */}
             <div className="p-5 border-b border-neutral-100 flex items-start justify-between">
               <div>
-                <h3 className="text-base font-bold text-black">All Related Papers</h3>
+                <h3 className="text-base font-bold text-black tracking-[-0.02em]">All Related Papers</h3>
                 <p className="text-xs text-neutral-500 mt-0.5 font-medium">Browse reference papers related to GLM-5.1 research.</p>
               </div>
               <button
@@ -121,7 +123,7 @@ export function RelatedPapers() {
                   placeholder="Search papers by title or arXiv id..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-1.5 bg-white border border-neutral-200 rounded-lg text-sm text-black focus:outline-none focus:ring-1 focus:ring-[#F04D22] focus:border-[#F04D22] placeholder-neutral-400 transition-all font-semibold font-sans"
+                  className="w-full pl-9 pr-4 py-1.5 bg-white border border-neutral-200 rounded-lg text-sm text-black focus:outline-none focus:ring-1 focus:ring-[#F04D22] focus:border-[#F04D22] placeholder-neutral-400 transition-all font-semibold"
                   autoFocus
                 />
               </div>
@@ -137,14 +139,16 @@ export function RelatedPapers() {
                       className="bg-white border border-neutral-200 rounded-xl p-4 flex flex-col justify-between h-[135px] hover:border-[#F04D22] hover:shadow-sm transition-all cursor-pointer group/item"
                     >
                       <div>
-                        <h4 className="text-xs font-bold text-black leading-snug line-clamp-3 group-hover/item:text-[#F04D22] transition-colors">
+                        <h4 className="text-xs font-bold text-black leading-snug line-clamp-3 group-hover/item:text-[#F04D22] transition-colors tracking-[-0.01em]">
                           {paper.title}
                         </h4>
-                        <p className="text-[10px] text-neutral-400 font-mono font-bold pt-1">{paper.arxiv}</p>
+                        <p className="text-[9px] text-neutral-400 font-mono font-bold pt-1">{paper.arxiv}</p>
                       </div>
 
                       <div className="flex items-center justify-between border-t border-neutral-100 pt-2.5 mt-auto">
-                        <span className="text-[10px] text-neutral-500 font-bold">{paper.citations} citations</span>
+                        <span className="text-[10px] text-neutral-500 font-semibold">
+                          <span className="font-mono font-bold text-neutral-600">{paper.citations}</span> citations
+                        </span>
                         <button
                           className="p-1 text-neutral-400 hover:text-[#F04D22] hover:bg-[#F5F5F5] rounded transition-all"
                           aria-label="Save paper"
@@ -156,22 +160,22 @@ export function RelatedPapers() {
                   ))}
                 </div>
               ) : (
-                <div className="py-12 text-center">
+                <div className="py-12 text-center select-none">
                   <Bookmark className="w-8 h-8 text-neutral-300 mx-auto mb-2" />
-                  <p className="text-sm font-bold text-neutral-500 font-sans">No matching papers found</p>
-                  <p className="text-xs text-neutral-400 mt-0.5 font-sans">Try widening your search terms</p>
+                  <p className="text-sm font-semibold text-neutral-500">No matching papers found</p>
+                  <p className="text-xs text-neutral-400 mt-0.5">Try widening your search terms</p>
                 </div>
               )}
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 bg-[#F5F5F5]/60 border-t border-neutral-100 flex items-center justify-between font-sans">
-              <span className="text-xs font-bold text-neutral-500 font-mono">
-                Showing {filteredPapers.length} of {relatedPapers.length} papers
+            <div className="p-4 bg-[#F5F5F5]/60 border-t border-neutral-100 flex items-center justify-between">
+              <span className="text-xs font-semibold text-neutral-500">
+                Showing <span className="font-mono font-bold text-neutral-600">{filteredPapers.length}</span> of <span className="font-mono font-bold text-neutral-600">{relatedPapers.length}</span> papers
               </span>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="px-4 py-1.5 bg-black text-white rounded-lg text-xs font-bold hover:bg-neutral-800 transition-colors shadow-sm"
+                className="px-4 py-1.5 bg-black text-white rounded-lg text-xs font-semibold hover:bg-neutral-800 transition-colors shadow-sm"
               >
                 Close
               </button>

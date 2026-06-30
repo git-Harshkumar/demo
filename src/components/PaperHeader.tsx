@@ -5,23 +5,23 @@ export function PaperHeader() {
   const visibleAuthors = authors.slice(0, 4);
 
   return (
-    <div className="bg-white rounded-xl border border-neutral-200 p-6 md:p-8 shadow-sm transition-all hover:shadow-md">
+    <div className="bg-white rounded-xl border border-neutral-200 p-6 md:p-8 shadow-sm transition-all hover:shadow-md select-none">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
         {/* Left Column: Details */}
         <div className="lg:col-span-2 space-y-5">
-          {/* arXiv ID pill with monospaced tag */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded border border-neutral-200 bg-[#F5F5F5] text-xs font-mono font-bold text-neutral-850">
-            <FileText className="w-3.5 h-3.5" />
+          {/* arXiv ID pill with JetBrains Mono */}
+          <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-neutral-200 bg-[#F5F5F5] text-[10px] font-mono font-bold text-neutral-850">
+            <FileText className="w-3.5 h-3.5 text-neutral-500" />
             arxiv:2504.XXXXXX
           </div>
 
-          {/* Title */}
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight leading-tight">
+          {/* Title - Restrained, dense, and modern headline */}
+          <h1 className="text-2xl sm:text-3xl font-bold text-black tracking-[-0.025em] leading-tight font-sans">
             {paperMeta.title}
           </h1>
 
-          {/* Meta Info: Published & Citations */}
-          <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-neutral-500">
+          {/* Meta Info: Published & Citations (Metrics in JetBrains Mono) */}
+          <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-neutral-500 font-sans">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-4 h-4 text-neutral-400" />
               Published {paperMeta.published}
@@ -29,61 +29,61 @@ export function PaperHeader() {
             <span className="text-neutral-300">•</span>
             <span className="flex items-center gap-1.5">
               <TrendingUp className="w-4 h-4 text-neutral-400" />
-              {paperMeta.citations} Citations
+              <span className="font-mono font-bold text-black">{paperMeta.citations}</span> Citations
             </span>
           </div>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-2.5 pt-2">
-            {/* PDF Button - Solid Orange Groq style */}
+            {/* PDF Button */}
             <a
               href={paperMeta.pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#F04D22] text-white rounded-lg text-xs font-extrabold shadow-sm hover:bg-black transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#F04D22] text-white rounded-lg text-xs font-semibold shadow-sm hover:bg-black transition-all font-sans"
             >
               <FileDown className="w-4 h-4" />
               PDF
             </a>
 
-            {/* arXiv Page Button - White with thin border */}
+            {/* arXiv Page Button */}
             <a
               href={paperMeta.arxivUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 border border-black rounded-lg text-xs font-extrabold text-black bg-white hover:bg-[#F5F5F5] transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-black rounded-lg text-xs font-semibold text-black bg-white hover:bg-[#F5F5F5] transition-all font-sans"
             >
               <FileText className="w-4 h-4 text-neutral-500" />
               arXiv Page
               <ExternalLink className="w-3.5 h-3.5 text-neutral-400" />
             </a>
 
-            {/* GitHub Button - White with thin border */}
+            {/* GitHub Button */}
             <a
               href={paperMeta.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 border border-black rounded-lg text-xs font-extrabold text-black bg-white hover:bg-[#F5F5F5] transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-black rounded-lg text-xs font-semibold text-black bg-white hover:bg-[#F5F5F5] transition-all font-sans"
             >
               <Github className="w-4 h-4 text-neutral-700" />
-              GitHub ★ {paperMeta.stars}
+              GitHub ★ <span className="font-mono font-bold">{paperMeta.stars}</span>
             </a>
 
-            {/* Save Button - White with thin border */}
-            <button className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-300 rounded-lg text-xs font-extrabold text-neutral-700 bg-white hover:bg-[#F5F5F5] hover:border-black transition-all">
+            {/* Save Button */}
+            <button className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-300 rounded-lg text-xs font-semibold text-neutral-700 bg-white hover:bg-[#F5F5F5] hover:border-black transition-all font-sans">
               <Bookmark className="w-4 h-4 text-neutral-400" />
               Save
             </button>
           </div>
 
-          {/* Rankings Info */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold pt-1">
+          {/* Rankings Info (Ranks in JetBrains Mono) */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold pt-1 font-sans">
             <span className="text-neutral-500">
-              Overall Rank: <span className="text-black">{paperMeta.overallRank}</span>
+              Overall Rank: <span className="font-mono font-bold text-black">{paperMeta.overallRank}</span>
             </span>
             <span className="text-neutral-300">•</span>
             <span className="text-neutral-500">
-              LLM Rank: <span className="text-black">{paperMeta.llmRank}</span>
+              LLM Rank: <span className="font-mono font-bold text-black">{paperMeta.llmRank}</span>
             </span>
             <span className="text-neutral-300">•</span>
             <a href="#leaderboard" className="text-[#F04D22] hover:text-black transition-all inline-flex items-center gap-0.5">
@@ -92,7 +92,7 @@ export function PaperHeader() {
           </div>
 
           {/* Authors List inline */}
-          <div className="flex flex-wrap items-center gap-4 pt-3 border-t border-neutral-100">
+          <div className="flex flex-wrap items-center gap-4 pt-3 border-t border-neutral-100 font-sans">
             <div className="flex items-center gap-3">
               {visibleAuthors.map((author) => (
                 <div key={author.name} className="flex items-center gap-2">
@@ -104,18 +104,18 @@ export function PaperHeader() {
                   <span className="text-xs font-bold text-neutral-800">{author.name}</span>
                 </div>
               ))}
-              <span className="inline-flex items-center px-2.5 py-1 rounded bg-[#F04D22]/5 text-[#F04D22] border border-[#F04D22]/10 text-[10px] font-extrabold">
+              <span className="inline-flex items-center px-2.5 py-1 rounded bg-[#F04D22]/5 text-[#F04D22] border border-[#F04D22]/10 text-[10px] font-bold">
                 +18 authors
               </span>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Paper Thumbnail Preview with Groq Performance Colors */}
+        {/* Right Column: Paper Thumbnail Preview */}
         <div className="flex justify-center lg:justify-end">
           <div className="relative w-full max-w-[210px] aspect-[3/4] bg-white rounded-xl border border-neutral-200 shadow-sm p-4 hover:shadow-md transition-all select-none">
             {/* Top title text */}
-            <div className="text-center font-serif font-extrabold text-[9px] text-black leading-tight border-b border-neutral-100 pb-2">
+            <div className="text-center font-serif font-bold text-[9px] text-black leading-tight border-b border-neutral-100 pb-2">
               GLM-5.1: Towards Long-Horizon Tasks
             </div>
             
@@ -128,9 +128,9 @@ export function PaperHeader() {
 
             {/* Mock Chart Container */}
             <div className="border border-neutral-200 rounded-lg p-2 bg-[#F5F5F5]/40 mt-3 flex flex-col items-center">
-              <div className="text-[7px] font-bold text-neutral-400 mb-2 uppercase tracking-wider">Comparative Performance Metrics</div>
+              <div className="text-[7px] font-bold text-neutral-400 mb-2 uppercase tracking-wider font-sans">Comparative Performance Metrics</div>
               <div className="w-full flex items-end justify-center gap-2 h-14 pb-1.5 px-1 border-b border-neutral-250">
-                {/* 5 bars: Groq Orange, Black, Grey, Grey, Grey */}
+                {/* 5 bars */}
                 <div className="w-2.5 bg-[#F04D22] rounded-t-sm transition-all hover:opacity-85" style={{ height: "80%" }}></div>
                 <div className="w-2.5 bg-black rounded-t-sm transition-all hover:opacity-85" style={{ height: "95%" }}></div>
                 <div className="w-2.5 bg-neutral-300 rounded-t-sm transition-all hover:opacity-85" style={{ height: "65%" }}></div>

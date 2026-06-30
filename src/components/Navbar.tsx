@@ -2,15 +2,15 @@ import { Search, Bookmark } from "lucide-react";
 
 export function Navbar() {
   return (
-    <nav className="border-b border-neutral-200 bg-white sticky top-0 z-50 shadow-sm">
+    <nav className="border-b border-neutral-200 bg-white sticky top-0 z-50 shadow-sm select-none">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
           <div className="flex items-center gap-2 flex-shrink-0 cursor-pointer">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#F04D22] text-white font-extrabold text-xs tracking-wider shadow-sm">
+            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#F04D22] text-white font-extrabold text-xs tracking-wider shadow-sm font-sans">
               FA
             </div>
-            <span className="text-base font-extrabold text-black tracking-tight uppercase font-sans">Frontier Atlas</span>
+            <span className="text-base font-bold text-black tracking-[-0.02em] uppercase font-sans">Frontier Atlas</span>
           </div>
 
           {/* Search bar */}
@@ -24,7 +24,7 @@ export function Navbar() {
               className="w-full pl-9 pr-12 py-1.5 bg-[#F5F5F5] border border-neutral-200 rounded-lg text-sm text-black focus:outline-none focus:ring-1 focus:ring-[#F04D22] focus:border-[#F04D22] placeholder-neutral-400 transition-all font-medium font-sans"
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-              <kbd className="inline-flex items-center gap-0.5 px-1.5 py-0.5 border border-neutral-200 rounded text-[10px] font-semibold text-neutral-400 bg-white font-mono shadow-sm">
+              <kbd className="inline-flex items-center gap-0.5 px-1.5 py-0.5 border border-neutral-200 rounded text-[9px] font-bold text-neutral-400 bg-white font-mono shadow-sm">
                 ⌘ K
               </kbd>
             </div>
@@ -37,10 +37,10 @@ export function Navbar() {
                 <a
                   key={link}
                   href={`#${link.toLowerCase()}`}
-                  className="text-xs font-bold uppercase tracking-wider text-neutral-600 hover:text-[#F04D22] transition-colors font-sans"
+                  className="text-xs font-semibold text-neutral-600 hover:text-[#F04D22] transition-colors font-sans"
                 >
-                  {link
-                }</a>
+                  {link}
+                </a>
               ))}
             </div>
 
@@ -53,7 +53,7 @@ export function Navbar() {
               </button>
 
               <button
-                className="flex items-center justify-center w-8 h-8 rounded-full bg-[#F5F5F5] border border-neutral-200 text-black font-extrabold text-xs shadow-sm hover:ring-2 hover:ring-[#F04D22]/20 hover:border-[#F04D22] transition-all font-sans"
+                className="flex items-center justify-center w-8 h-8 rounded-full bg-[#F5F5F5] border border-neutral-200 text-black font-bold text-xs shadow-sm hover:ring-2 hover:ring-[#F04D22]/20 hover:border-[#F04D22] transition-all font-sans"
                 aria-label="User profile"
               >
                 JP
